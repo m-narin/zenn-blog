@@ -6,7 +6,7 @@ topics:
   - "新卒"
   - "ポエム"
 published: true
-published_at: 2023-07-28 08:00 # 過去の日時を指定する
+published_at: 2023-07-28 08:00
 ---
 
 # はじめに
