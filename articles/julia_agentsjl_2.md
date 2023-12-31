@@ -13,7 +13,7 @@ published_at: "2023-12-26 00:00"
 
 ![socialdist5.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/c3bb272d-0cba-b03c-fb98-d109f6ca6c2b.gif)
 
-※出力される画像や動画がたくさんありますが、Qiitaにuploadできる画像ファイルの上限を超えるため、それらは以下のURLに譲ります。
+※出力される画像や動画がたくさんありますが、それらは以下のURLに譲ります。
 
 ▼URL
 
