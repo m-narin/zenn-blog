@@ -60,7 +60,7 @@ Agent.jlはJuliaの特徴をそのまま引き継いだように、実行速度�
 
 ▼URL
 
-https://juliadynamics.github.io/Agents.jl/stable/examples/schelling/#Schelling's-segregation-model
+https://juliadynamics.github.io/Agents.jl/stable/examples/schelling/
 
 シェリングの分居モデルは、ABM界隈では古典的な教材としてよく載っているものです。隣人の選り好みして満足いくまで引っ越すのを繰り返すというもので、満足度の基準が緩い場合であっても、分居されてしまうという洞察が、コンピュータシミュレーションで明かされます。元ネタを辿るとアメリカにて黒人、白人の分居が起こる様子をコンピュータ上で再現しようとしたものがきっかけとなっているようです。
 

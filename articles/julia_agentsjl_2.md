@@ -13,11 +13,9 @@ published_at: "2023-12-26 00:00"
 
 ![socialdist5.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/c3bb272d-0cba-b03c-fb98-d109f6ca6c2b.gif)
 
-※出力される画像や動画がたくさんありますが、それらは以下のURLに譲ります。
-
 ▼URL
 
-https://juliadynamics.github.io/Agents.jl/stable/examples/social_distancing/
+https://juliadynamics.github.io/AgentsExampleZoo.jl/dev/examples/social_distancing/
 
 ▼関連
 
@@ -81,7 +79,7 @@ abm_video(
 display("image/gif", read("socialdist1.gif"))
 ```
 
-可視化ライブラリを用いて、agentが連続空間を動くだけのシンプルなABMを見ていきます。
+可視化ライブラリを用いて、agentが連続空間を動くだけのシンプルなABMが見られます。
 
 # agent同士の衝突
 
@@ -107,6 +105,9 @@ abm_video(
 
 display("image/gif", read("socialdist2.gif"))
 ```
+
+![socialdist2.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/463cf5a7-d9a8-04bf-617b-71530cd45d13.gif)
+
 `interacting_pairs`メソッドを利用し、0.012以内の最も近い距離にいるagentを取得します。そして`elastic_collision!`メソッドを用いて、該当の2体のagentを衝突させます。(わざわざ自力で衝突後のvelを更新する計算式を書かなくてもこのように用意されているものを利用できるので便利ですね。)
 
 # 動かないagent
@@ -133,6 +134,8 @@ abm_video(
 
 display("image/gif", read("socialdist3.gif"))
 ```
+
+![socialdist3.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/53548928-0b8c-9471-b60f-9842eb2aacf2.gif)
 
 idが1~400までの400体のagentのmassを無限大にし、velをゼロにします。
 
@@ -220,6 +223,8 @@ fig, abmstepper = abm_plot(sir_model; ac = sir_colors)
 fig # display figure
 ```
 
+![sir.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/45a35f7d-28e8-011f-57b5-b8eb73252026.png)
+
 sir_modelを作り、各agentのstatusに応じて色を変えます。初期画面を出力しています。
 
 ```julia:
@@ -295,6 +300,8 @@ abm_video(
 display("image/gif", read("socialdist4.gif"))
 ```
 
+![socialdist4.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/046a75ed-f009-61fc-62b6-9a9ad968f962.gif)
+
 感染したagentが赤くなっていくことが分かると思います。
 
 # 爆発的な感染
@@ -335,6 +342,8 @@ figure[1, 2] =
 figure
 ```
 
+![sir2.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/62ef2474-b506-1b35-c416-4caa80ed00eb.png)
+
 感染者の人数を各パラメータごとに出力します。いずれのケースにおいても、爆発的な感染増加になります。
 
 # ソーシャルディスタンス
@@ -357,6 +366,8 @@ abm_video(
 display("image/gif", read("socialdist5.gif"))
 ```
 
+![socialdist5.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/2e40f86a-307e-2b81-8952-5a5b0c32c9d8.gif)
+
 8割動かないagentを作ります。
 なかなか刺激的な記述がありました。
 
@@ -376,6 +387,8 @@ figure[1, 2] = Legend(
 )
 figure
 ```
+
+![sir3.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/dac894d8-ccc7-60a1-181f-d6952f24ada5.png)
 
 ソーシャルディスタンスを含めたシミュレーション実行グラフを出力します。ソーシャルディスタンスがある場合、感染拡大が緩やかなカーブになり、感染者数の最大値も低くなっていることが理解できます。
 

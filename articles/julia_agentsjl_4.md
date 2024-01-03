@@ -16,7 +16,7 @@ published_at: "2023-12-28 00:00"
 
 ▼URL
 
-https://juliadynamics.github.io/Agents.jl/stable/examples/game_of_life_2D_CA/
+https://juliadynamics.github.io/AgentsExampleZoo.jl/dev/examples/game_of_life_2D_CA/
 
 ▼ライフゲーム
 
