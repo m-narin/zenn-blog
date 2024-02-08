@@ -6,12 +6,13 @@ topics:
   - "googlecloud"
   - "資格"
   - "新卒"
+  - "gc24"
 published: true
 published_at: "2023-12-24 22:24"
 ---
 
 # はじめに
-Google Cloudの知識を体系的に学ぶために、Associate Cloud Engineerの資格取得に向けて勉強を重ねていました。先日無事一発合格できたので、その体験記になります。
+2023年の秋頃、Google Cloudの知識を体系的に学ぶためにAssociate Cloud Engineerの資格取得に向けて勉強を重ねていました。先日無事一発合格できたので、その体験記になります。
 
 ![image.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/614347/6f1be52b-f74a-19bf-9f83-f7eaeafcb5cb.png)
 
