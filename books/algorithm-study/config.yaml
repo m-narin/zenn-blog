@@ -17,3 +17,4 @@ price: 0 # 有料の場合200〜5000
 chapters:
   - introduction
   - tutorial 
+  - study1_binary_search
