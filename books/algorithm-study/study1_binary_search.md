@@ -52,7 +52,7 @@ array_elements = list(map(int, input().split(',')))
 ## 解答
 :::details クリックすると解答例が見られます
 
-全探索(全探索)
+全探索(線形探索)
 ```py:python
 # 入力
 number_to_find = int(input())
