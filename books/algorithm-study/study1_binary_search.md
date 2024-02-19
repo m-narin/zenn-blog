@@ -68,6 +68,7 @@ def linear_search(array, number):
 
 print(linear_search(array_elements, number_to_find))
 ```
+配列の頭から順に探索していきます。
 
 二分探索
 ```py:python
