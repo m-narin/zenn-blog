@@ -82,11 +82,11 @@ TANAKA
 0
 ```
 
-```input3
+```sh:input3
 WATANABE
 ```
 
-```output3
+```sh:output3
 3
 ```
 
@@ -191,7 +191,7 @@ get("USA")
 get("SPAIN")
 ```
 
-```output1
+```sh:output1
 Tokyo
 Washington D.C.
 Madrid
@@ -323,7 +323,7 @@ get("SPAIN")
 get("GERMANY")
 ```
 
-```output1
+```sh:output1
 Tokyo
 Washington D.C.
 Madrid
