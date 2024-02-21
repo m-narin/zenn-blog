@@ -44,7 +44,6 @@ No
 
 ## コマンドラインからの入力を受け取る方法
 ```py:python
-# 入力
 number_to_find = int(input())
 array_elements = list(map(int, input().split(',')))
 ```
@@ -54,11 +53,9 @@ array_elements = list(map(int, input().split(',')))
 
 全探索(線形探索)
 ```py:python
-# 入力
 number_to_find = int(input())
 array_elements = list(map(int, input().split(',')))
 
-# 回答
 def linear_search(array, number):
     for element in array:
         if element == number:
@@ -72,11 +69,9 @@ print(linear_search(array_elements, number_to_find))
 
 二分探索
 ```py:python
-# 入力
 number_to_find = int(input())
 array_elements = list(map(int, input().split(',')))
 
-# 回答
 def binary_search(sorted_array, number):
     left, right = 0, len(sorted_array) - 1
     

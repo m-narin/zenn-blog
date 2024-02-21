@@ -78,7 +78,6 @@ Fizz Buzz
 ## コマンドラインからの入力を受け取る方法
 この本ではPythonをサポートしています。アルゴリズムの理解が本質なので、制御構文が書ければなんでも大丈夫です。
 ```py:python
-# 入力
 last_number = int(input())
 array_elements = list(map(int, input().split(',')))
 ```
@@ -90,11 +89,9 @@ array_elements = list(map(int, input().split(',')))
 :::details クリックすると解答例が見られます
 
 ```py:python
-# 入力
 last_number = int(input())
 array_elements = list(map(int, input().split(',')))
 
-# 回答
 def fizz_buzz(last_number,numbers):
     for i in range(last_number):
         number = array_elements[i]
