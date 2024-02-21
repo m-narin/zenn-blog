@@ -18,3 +18,5 @@ chapters:
   - introduction
   - tutorial 
   - study1_binary_search
+  - study2_sort
+  - study3_hash
