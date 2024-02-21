@@ -33,12 +33,12 @@ title: "二分探索"
 Yes
 ```
 
-```sh:input1
+```sh:input2
 7
 0,2,3,5,6,8,9,10
 ```
 
-```sh:output1
+```sh:output2
 No
 ```
 
