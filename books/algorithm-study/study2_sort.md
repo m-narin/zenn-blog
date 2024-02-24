@@ -113,7 +113,6 @@ print(sorted_numbers)
 無味乾燥に.sortメソッドを使うのではなく、背景を想像しながら利用できるとまた楽しさが増すことでしょう。
 
 # 参考文献
-
 - http://www.rsch.tuis.ac.jp/~ohmi/software-basic/sort.html
 - https://qiita.com/drken/items/44c60118ab3703f7727f
 - https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%A3%E3%83%A0%E3%82%BD%E3%83%BC%E3%83%88

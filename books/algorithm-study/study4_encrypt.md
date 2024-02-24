@@ -197,6 +197,5 @@ n=pqが途方もなく大きいおかげで、攻撃者から通信を保護す�
 また一つ、教養が深まりましたね🙌
 
 # 参考文献
-
 - https://qiita.com/reika727/items/215d23bf18e21e3cbc52
 - https://web.quizknock.com/rsa-cryptosystem?page=1

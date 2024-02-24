@@ -151,7 +151,6 @@ Indexを貼ると、裏側にB-treeというものが作られます。これは
 
 
 # 参考文献
-
 - https://breezegroup.co.jp/202006/algorithm-search/
 - https://www.techscore.com/blog/2016/08/08/%E9%96%8B%E7%99%BA%E6%96%B0%E5%8D%92%E3%81%AB%E6%8D%A7%E3%81%90%E3%80%81%E5%9F%BA%E6%9C%AC%E3%81%AE%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0%E3%81%A8%E8%A8%88%E7%AE%97%E9%87%8F/
 - https://gihyo.jp/admin/serial/01/rdbms-autumn-sky/0004
