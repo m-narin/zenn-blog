@@ -12,7 +12,8 @@ summary:
   
   "
 topics: ["アルゴリズム", "勉強会", "Python", "競技プログラミング", "新卒"] # トピック（5つまで）
-published: false # falseだと下書き
+published: true # falseだと下書き
+published_at: 2024-02-25 15:00
 price: 0 # 有料の場合200〜5000
 chapters:
   - introduction
