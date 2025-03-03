@@ -64,7 +64,7 @@ VSCode を使っている前提で簡単にそのようなデータを作れる�
 
 ![](https://storage.googleapis.com/zenn-user-upload/4cfcca8c6617-20250303.png)
 
-6. Crtl + f で検索窓を開き貼り付け。一括置換機能でクオテーションとカンマ`",`に置換する
+6. Crtl + f で検索窓を開き貼り付け、一括置換機能でダブルクオテーションとカンマ`",`に置換する
 
 実行前はこんな感じの画面になり、
 ![](https://storage.googleapis.com/zenn-user-upload/5b19196dddc5-20250303.png)
