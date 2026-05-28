@@ -224,6 +224,38 @@ reusable workflow に渡す `required_jobs` には、**「これらが全部既�
 
 ジョブ名は GitHub Actions の UI で表示される check run 名と一致させる必要があります（reusable workflow 経由のジョブは `<呼び出し側のジョブ名> / <reusable側のジョブ名>` という形式になる点に注意）。
 
+## draft PR ではどうなる？
+
+「draft のうちは CI を回したくない」というのはよくあるニーズですが、ここは少し注意が必要です。
+
+GitHub Actions の `pull_request` トリガーは **draft / ready を区別しません**。`opened` も `synchronize` も `labeled` も、draft 状態の PR で普通に発火します。なので素朴に組むと「draft でも CI が走る」状態になります。
+
+ところが今回のラベル方式だと、**実質的にラベルで二段階のゲートがかかる**ので、ここがうまく効きます。
+
+- **draft + ラベル無し** → ラベル判定で落ちるので、重いジョブは走らない（コスト 0）
+- **draft + ラベル有り** → 走る
+
+つまり「draft のうちは CI を回したくない」なら、**ラベルを付けなければいいだけ**で自然に達成できます。これはラベル方式の地味に嬉しい副作用です。
+
+それでも「ラベルが付いていても draft の間は絶対に走らせたくない」と明示したい場合は、ゲートに draft 判定を足します。
+
+```yaml
+jobs:
+  ci-label-check:
+    if: github.event.pull_request.draft == false
+    uses: ./.github/workflows/reusable-ci-label-check.yaml
+    with:
+      required_jobs: "ci-label-check / check|test|lint"
+```
+
+逆に「draft → Ready に変えた瞬間に走らせたい」なら、トリガーに `ready_for_review` を足す手もあります。
+
+```yaml
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, ready_for_review]
+```
+
 ## 注意点
 
 - `mheap/github-action-required-labels` の `mode` は `exactly` にすると「ちょうど 1 つ付いている」状態を要求するので、他のラベルが混ざっていると失敗してしまいます。多くのチームでは他ラベル（`bug` / `enhancement` 等）と併用したいはずなので、上の例のように `mode: minimum` `count: 1` にして「最低 1 つ付いていれば OK」にしておくのが扱いやすいです
