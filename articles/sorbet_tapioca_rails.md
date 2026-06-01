@@ -107,8 +107,7 @@ bundle exec srb tc
 ```ruby
 class ArticlesController < ApplicationController
   def index
-    limit = params[:limit] || 10
-    articles = Article.order(created_at: :desc).limit(limit)
+    articles = fetch_articles(limit: params[:limit] || 10)
 
     render json: {
       articles: articles.map { |a|
@@ -120,6 +119,12 @@ class ArticlesController < ApplicationController
       },
       total: articles.size,
     }
+  end
+
+  private
+
+  def fetch_articles(limit:)
+    Article.order(created_at: :desc).limit(limit)
   end
 end
 ```
@@ -166,7 +171,7 @@ class ArticlesController < ApplicationController
       params.permit(:limit).to_h,
     )
 
-    articles = Article.order(created_at: :desc).limit(input.limit)
+    articles = fetch_articles(limit: input.limit)
 
     response = IndexResponse.new(
       articles: articles.map { |a|
@@ -181,6 +186,13 @@ class ArticlesController < ApplicationController
 
     render(json: response.as_json)
   end
+
+  private
+
+  sig { params(limit: Integer).returns(T::Array[Article]) }
+  def fetch_articles(limit:)
+    Article.order(created_at: :desc).limit(limit).to_a
+  end
 end
 ```
 
@@ -191,6 +203,7 @@ end
 - **`IndexParams` / `ArticleResponse` / `IndexResponse`**: 入出力を `T::Struct` で定義。フィールドごとに型と必須/任意（`T.nilable(...)`）を明示
 - **`TypeCoerce[IndexParams].new.from(...)`**: `params`（中身は基本 String）を `IndexParams` の型に**変換**してから使う。文字列の `"1"` を `Integer` 1 にしてくれる。なお `TypeCoerce` は Sorbet 本体ではなく [`sorbet-coerce`](https://github.com/chanzuckerberg/sorbet-coerce) gem が提供しているヘルパー
 - **`sig { void }`**: `index` アクションは戻り値を使わない（`render` で済む）ので `void` を宣言
+- **`fetch_articles(limit:)` の sig**: クエリ部分を private メソッドに切り出し、`sig { params(limit: Integer).returns(T::Array[Article]) }` で「`Integer` を受け取って `Article` の配列を返す」という契約を明示。`# typed: strict` ではすべての public/private メソッドに `sig` が必要になるので、こうした内部メソッドの戻り値型も自然と書く流れになる
 
 レスポンスの形が `IndexResponse` という型として明示されているので、「このエンドポイントの返り値は何か？」がコードを読めば一発で分かります。
 
