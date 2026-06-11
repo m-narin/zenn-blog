@@ -1,5 +1,5 @@
 ---
-title: "CIの実行時間を削るための工夫まとめ"
+title: "CI改善レシピ集〜RSpec"
 emoji: "⏱️"
 type: "tech"
 topics:
